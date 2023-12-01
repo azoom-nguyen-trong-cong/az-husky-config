@@ -2,23 +2,20 @@ name: Check PR
 on:
   pull_request:
     types:
-      - opened
-      - reopened
-      - synchronize
+      - labeled
     branches:
       - main
       - develop
-  label:
-    - TEST
 
 jobs:
-  check:
+  checking:
+    if: github.event.label.name == 'TEST'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: yarn install
-      - name: Check
+      - name: Checking
         run: |
               echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
               echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
