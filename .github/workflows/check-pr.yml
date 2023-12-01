@@ -27,11 +27,9 @@ jobs:
 
   remove-label:
     runs-on: ubuntu-latest
-    needs: check
+    needs: checking
     steps:
       - uses: actions/checkout@v2
       - name: Remove label
         run: |
-          git fetch origin
-          git tag -d TEST
-          git push origin :refs/tags/TEST
+          echo "🎉 Need remove label when job done."
