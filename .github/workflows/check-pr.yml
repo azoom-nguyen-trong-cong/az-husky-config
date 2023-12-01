@@ -29,10 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: checking
     steps:
-      - uses: actions/checkout@v2
-      - name: Remove label
-        run: |
-          echo "🎉 Need remove label when job is done."
       - uses: actions/github-script@v7
       - name: Remove label
         with:
