@@ -29,7 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: checking
     steps:
-      - name: Remove label
       - uses: actions/github-script@v7
         with:
           script: |
